@@ -12,7 +12,6 @@
 #include "esp_check.h"
 #include "es8311_reg.h"
 #include "esp32-hal-i2c.h"
-#include "FreeRTOS.h"
 
 
 typedef struct {
@@ -330,7 +329,6 @@ esp_err_t es8311_init(es8311_handle_t dev, const es8311_clock_config_t *const cl
 
     /* Reset ES8311 to its default */
     ESP_RETURN_ON_ERROR(es8311_write_reg(dev, ES8311_RESET_REG00, 0x1F), TAG, "I2C read/write error");
-    vTaskDelay(20);
     ESP_RETURN_ON_ERROR(es8311_write_reg(dev, ES8311_RESET_REG00, 0x00), TAG, "I2C read/write error");
     ESP_RETURN_ON_ERROR(es8311_write_reg(dev, ES8311_RESET_REG00, 0x80), TAG, "I2C read/write error"); // Power-on command
 
