@@ -1,7 +1,7 @@
 // ======================================================================
 // SoundRecorder — ES7210 Microphone WAV Recorder
 // Waveshare ESP32-S3-Touch-AMOLED-2.06
-// Recording a 30-second demo from the Interlam microphone to the SD card
+// Recording a 30-second demo from the Internal microphone to the SD card
 // ======================================================================
 
 #include "FS.h"
